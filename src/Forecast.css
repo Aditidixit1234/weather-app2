@@ -1,0 +1,68 @@
+.forecastContainer {
+  margin-top: 25px;
+  color: white;
+}
+
+.forecastScroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+/* Hide scrollbar (clean UI) */
+.forecastScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.forecastCard {
+  min-width: 90px;
+  padding: 12px;
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* Hover effect 🔥 */
+.forecastCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.forecastIcon {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+
+/* Wrapper for arrow positioning */
+.forecastWrapper {
+  position: relative;
+}
+
+/* Arrow indicator */
+.scrollArrow {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 22px;
+  color: white;
+  opacity: 0.8;
+
+  pointer-events: none;
+
+  animation: arrowMove 1.2s infinite;
+}
+
+/* Smooth animation */
+@keyframes arrowMove {
+  0% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(6px); }
+  100% { transform: translateY(-50%) translateX(0); }
+}

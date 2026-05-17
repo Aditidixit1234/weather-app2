@@ -1,0 +1,61 @@
+.InformationBox {
+  text-align: center;
+  margin-top: 30px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+
+  background: url("https://images.unsplash.com/photo-1501973801540-537f08ccae7b?q=80&w=2070&auto=format&fit=crop") no-repeat center center/cover;
+}
+
+/* Add blur overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* 🔥 Animated score bar */
+.scoreFill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.6s ease;
+
+  box-shadow: 0 0 10px rgba(255,255,255,0.6),
+              0 0 20px rgba(255,255,255,0.3);
+
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 5px rgba(255,255,255,0.3);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255,255,255,0.8);
+  }
+}
+
+/* 🤖 Emoji animation */
+.scoreEmoji {
+  display: inline-block;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}

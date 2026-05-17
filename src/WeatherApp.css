@@ -1,0 +1,117 @@
+/* MAIN WRAPPER */
+.appWrapper {
+  position: relative; /* 🔥 required for layering */
+
+  min-height: 100vh;
+  width: 100%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* BACKGROUND IMAGE */
+.bgImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* MAIN CONTENT */
+.content {
+  position: relative;
+  z-index: 2; /* 🔥 always above effects */
+
+  text-align: center;
+  color: white;
+  padding-top: 40px;
+}
+
+/* 🌫️ FOG EFFECT */
+.fog {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+/* ☁️ CLOUD EFFECT */
+.clouds {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255,255,255,0.05);
+  z-index: 1;
+}
+
+/* 🌧️ RAIN GLOW */
+.rainGlow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+  z-index: 1;
+}
+
+/* ===== LAYOUT ===== */
+.mainLayout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* LEFT PANEL */
+.leftPanel {
+  width: 200px;
+}
+
+/* CENTER PANEL */
+.centerPanel {
+  width: 420px;
+}
+
+/* RIGHT PANEL */
+.rightPanel {
+  width: 250px;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 900px) {
+  .mainLayout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftPanel,
+  .centerPanel,
+  .rightPanel {
+    width: 100%;
+  }
+}
